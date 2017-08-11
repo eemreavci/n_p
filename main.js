@@ -25,25 +25,12 @@ $(document).ready(function () {
     }
   });
 
-  // $(function() {
-  //   $('a[href*=\\#]:not([href=\\#])').click(function() {
-  //     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-  //       var target = $(this.hash);
-  //       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-  //       if (target.length) {
-  //         $('html,body').animate({
-  //           scrollTop: target.offset().top - 49
-  //         }, 600, 'easeOutBack');
-  //         return false;
-  //       }
-  //     }
-  //   });
-  // });
-
   $(function() {
     $('[data-hash]').click(function(e) {
       var target = $(e.target);
       target = $(target.data('hash'));
+      ga('set', 'page', '/' + target.data('hash') + '.html');
+      ga('send', 'pageview');
       if (target.length) {
         $('html,body').animate({
           scrollTop: target.offset().top - 49
