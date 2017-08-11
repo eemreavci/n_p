@@ -10,6 +10,8 @@ $(document).ready(function () {
     $('.content-container').load(url + '.html .page-content', function (e) {
       var hashTarget = targetHref && targetHref[0] === '#' ? $(targetHref) : null;
       var scrollPosition = hashTarget ? hashTarget.offset().top - 49 : 0;
+      ga('set', 'page', '/' + url + '.html');
+      ga('send', 'pageview');
       $('html,body').animate({
         scrollTop: scrollPosition
       }, 600, 'easeOutBack');
