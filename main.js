@@ -28,9 +28,9 @@ $(document).ready(function () {
   $(function() {
     $('[data-hash]').click(function(e) {
       var target = $(e.target);
-      target = $(target.data('hash'));
       ga('set', 'page', '/' + target.data('hash') + '.html');
       ga('send', 'pageview');
+      target = $(target.data('hash'));
       if (target.length) {
         $('html,body').animate({
           scrollTop: target.offset().top - 49
