@@ -10,6 +10,8 @@ $(document).ready(function () {
     $('.content-container').load(url + '.html .page-content', function (e) {
       var hashTarget = targetHref && targetHref[0] === '#' ? $(targetHref) : null;
       var scrollPosition = hashTarget ? hashTarget.offset().top - 49 : 0;
+      ga('set', 'page', '/' + url + '.html');
+      ga('send', 'pageview');
       $('html,body').animate({
         scrollTop: scrollPosition
       }, 600, 'easeOutBack');
@@ -23,24 +25,11 @@ $(document).ready(function () {
     }
   });
 
-  // $(function() {
-  //   $('a[href*=\\#]:not([href=\\#])').click(function() {
-  //     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-  //       var target = $(this.hash);
-  //       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-  //       if (target.length) {
-  //         $('html,body').animate({
-  //           scrollTop: target.offset().top - 49
-  //         }, 600, 'easeOutBack');
-  //         return false;
-  //       }
-  //     }
-  //   });
-  // });
-
   $(function() {
     $('[data-hash]').click(function(e) {
       var target = $(e.target);
+      ga('set', 'page', '/' + target.data('hash') + '.html');
+      ga('send', 'pageview');
       target = $(target.data('hash'));
       if (target.length) {
         $('html,body').animate({
