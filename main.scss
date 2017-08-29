@@ -1,17 +1,42 @@
 $text-color: #323335;
-$white: #fefefe;
+$white: #f2f2f2;
 $grey: #e2e2e2;
 
 * { margin: 0; padding: 0px; }
 
+@-ms-viewport{
+  width: device-width;
+}
+
 body {
   font-family: 'Raleway', sans-serif;
   color: $text-color;
+  font-size: 16px;
+  font-weight: 400;
   padding: 0;
   margin: 0;
   width: 100%;
   margin: 0 auto;
-  background: $grey;
+  background: $white;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-font-smoothing: antialiased !important;
+  text-rendering: optimizelegibility !important;
+  letter-spacing: .03em;
+}
+
+a {
+  text-decoration: underline;
+  color: inherit;
+  font-weight: 700;
+
+  &:hover {
+    text-decoration: none;
+  }
+  &:visited {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 nav {
@@ -24,6 +49,7 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   z-index: 10;
+  border-bottom: 10px solid $text-color;
 
   .navbar-logo {
     padding: 15px;
@@ -65,8 +91,27 @@ nav {
 }
 
 .content-container {
-  margin-top: 49px;
+  margin-top: 59px;
+  margin-bottom: 60px;
   background: $white;
+}
+
+.button-cta {
+  height: 40px;
+  padding: 5px 25px;
+  border-radius: 10px;
+  border: 2px solid $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:hover {
+    background: $white;
+    color: $text-color;
+  }
 }
 
 .hero-container {
@@ -87,6 +132,26 @@ nav {
 
   .hero-text-detail {
     margin-top: 15px;
+  }
+
+  &.fest-pack {
+    background: url('resources/festpack_hero.png');
+    background-size: cover;
+    background-position-y: -40px;
+
+    .hero-text {
+      font-weight: 700;
+    }
+  }
+
+  &.mobile-waiter {
+    background: url('resources/mobilewaiter_hero.png');
+    background-size: cover;
+    background-position-y: -160px;
+
+    .hero-text {
+      font-weight: 700;
+    }
   }
 }
 
@@ -127,10 +192,16 @@ nav {
     filter: brightness(50%);
   }
 
-  &.your-cuisine::before {
-    background: url('resources/Home.png');
+  &.mobile-waiter::before {
+    background: url('resources/mobilewaiter_home.png');
     background-size: cover;
     background-position-y: -190px;
+  }
+
+  &.fest-pack::before {
+    background: url('resources/festpack_home.png');
+    background-size: cover;
+    background-position-y: 0px;
   }
 
   &:nth-child(odd) {
@@ -192,21 +263,7 @@ nav {
       }
 
       .about-cta {
-        height: 40px;
-        padding: 5px 25px;
-        border-radius: 10px;
-        border: 2px solid $white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-self: flex-end;
-        font-weight: 700;
-        cursor: pointer;
-
-        &:hover {
-          background: $white;
-          color: $text-color;
-        }
+        @extend .button-cta;
       }
     }
   }
@@ -215,8 +272,12 @@ nav {
 .process-container {
   padding: 30px;
   background: $text-color;
-  margin-top: 10px;
+  margin-top: 60px;
   color: $white;
+
+  .process-cta {
+    @extend .button-cta;
+  }
 
   .process-title {
     font-size: 30px;
@@ -229,15 +290,21 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     margin-top: 30px;
+    margin-bottom: 30px;
 
     .process-item {
-      width: 80px;
+      // width: 80px;
       height: 80px;
+      padding: 0 15px;
       color: $white;
       font-weight: 500;
       display: flex;
       justify-content: center;
       align-items: center;
+      text-transform: uppercase;
+      text-align: center;
+      border-bottom: 1px solid $white;
+      border-radius: 15%;
     }
   }
 }
@@ -250,5 +317,70 @@ nav {
 }
 
 .contact-container {
-  height: 5000px;
+  padding: 30px;
+  background: $text-color;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  color: $white;
+
+  .contact-title {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .contact-text {
+    margin-top: 30px;
+    text-align: center;
+    p {
+      display: inline;
+    }
+  }
+}
+
+.article-container {
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 60px;
+  color: $text-color;
+  h1 {
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    margin-top: 30px;
+  }
+  video, img {
+    margin-left: 30px;
+  }
+  .article {
+    margin-top: 15px;
+    line-height: 1.7em;
+    &.with-video {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      // flex-wrap: wrap;
+    }
+    p {
+
+
+    }
+    ul {
+      margin-top: 15px;
+      li {
+        margin-left: 45px;
+        margin-top: 5px;
+        list-style-type: circle;
+      }
+    }
+
+    ol {
+      margin-top: 15px;
+      li {
+        margin-left: 45px;
+        margin-top: 5px;
+      }
+    }
+  }
 }

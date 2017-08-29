@@ -1,0 +1,15 @@
+{
+  "name": "nazlikaya-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio page of Nazli Kaya",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./node_modules/ws/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "local-web-server": "^2.2.3"
+  }
+}
