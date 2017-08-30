@@ -2,6 +2,26 @@
   <head>
     <title>Nazli Kaya | Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Favicon end -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
     <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -26,9 +46,9 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="navbar-logo">Nazli Kaya</div>
+      <div class="navbar-logo" data-hash="#home" data-url="index">Nazli Kaya</div>
       <div class="navbar-links">
-        <div data-hash="#home" class="navbar-link" data-url="index">Home</div>
+        <div data-hash="#home" class="navbar-link home" data-url="index">Home</div>
         <div data-hash="#projects" class="navbar-link" data-url="index">Projects</div>
         <div data-hash="#uxprocess" class="navbar-link" data-url="index">UX Process</div>
         <div data-hash="#contact" class="navbar-link" data-url="index">Contact</div>
@@ -72,19 +92,25 @@
         <br>
         <p>FestPack provides multiple options (bronze, silver, and gold) differing from most affordable to the highest quality in order to serve the needs of all users. It is possible to choose the tier for the concert ticket, hotel, and transportation separately which allows further customization.</p>
       </div>
-      <video controls="controls" width="270" height="480" name="Video Name" src="resources/festpack_modify_hotel.mov"></video>
+      <div>
+        <video controls="controls" width="270" height="480" name="Video Name" src="resources/festpack_modify_hotel.mov"></video>
+      </div>
     </div>
 
     <h2>Bookmarks</h2>
     <div class="article with-video">
       <p>Attending a concert mostly requires some planning beforehand, like checking your calendar, considering your budget, or asking friends to see if anyone else is attending the same concert as you are planning. Therefore, it is not always possible to book such a package on the spot, users need some time to think. When browsing a package, it is possible to bookmark it and then the user can come back to that package from the profile page at any time.</p>
-      <img width="270" height="480" src="resources/festpack_profile.png">
+      <div>
+        <img width="270" height="480" src="resources/festpack_profile.png">
+      </div>
     </div>
 
     <h2>Artists</h2>
     <div class="article with-video">
       <p>FestPack keeps the list of the user’s favorite artists in the Artists tab. In this tab, users can search for artists and add them to their list as well. By tapping on a particular artist, it is possible to get more information about the artist and also see all the upcoming concerts from this artist as packages, which one can book immediately.</p>
-      <video controls="controls" width="270" height="480" name="Video Name" src="resources/festpack_artist.mov"></video>
+      <div>
+        <video controls="controls" width="270" height="480" name="Video Name" src="resources/festpack_artist.mov"></video>
+      </div>
     </div>
 
     <h2>Alerts and Filters</h2>
@@ -94,7 +120,9 @@
         <br>
         <p>This feature allows users to catch deals from flights, hotels or concert tickets. While providing value to the user, this feature also provides a good way to gain returning customers.</p>
       </div>
-      <video controls="controls" width="270" height="480" name="Video Name" src="resources/festpack_alerts.mov"></video>
+      <div>
+        <video controls="controls" width="270" height="480" name="Video Name" src="resources/festpack_alerts.mov"></video>
+      </div>
     </div>
 
     <h2>Payment</h2>
@@ -104,15 +132,13 @@
         <br>
         <p>FestPack also provides the option to sign in using a Spotify account, which further reduces the entry barrier to the application.</p>
       </div>
-      <img width="270" height="480" src="resources/festpack_signin.png">
+      <div>
+        <img width="270" height="480" src="resources/festpack_signin.png">
+      </div>
     </div>
-
-    <h2>UX Process</h2>
-    <div class="article with-video">
-      <p>I have used Sketch to</p>
-      <img width="270" height="480" src="resources/festpack_signin.png">
+    <div class="article paginator">
+      <a  data-url="mobile-waiter">&#x25C4; Previous project</a>
     </div>
-
   </div>
 </div>
 </div>

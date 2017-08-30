@@ -9,7 +9,7 @@ $(document).ready(function () {
     var targetHref = $(e.target).data('hash');
     $('.content-container').load(url + '.html .page-content', function (e) {
       var hashTarget = targetHref && targetHref[0] === '#' ? $(targetHref) : null;
-      var scrollPosition = hashTarget ? hashTarget.offset().top - 49 : 0;
+      var scrollPosition = hashTarget ? hashTarget.offset().top - 59 : 0;
       ga('set', 'page', '/' + url + '.html');
       ga('send', 'pageview');
       $('html,body').animate({
@@ -33,7 +33,7 @@ $(document).ready(function () {
       target = $(target.data('hash'));
       if (target.length) {
         $('html,body').animate({
-          scrollTop: target.offset().top - 49
+          scrollTop: target.offset().top - 59
         }, 600, 'easeOutBack');
         return false;
       }

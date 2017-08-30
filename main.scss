@@ -1,4 +1,5 @@
 $text-color: #323335;
+$higlight-color: #CF4C32;
 $white: #f2f2f2;
 $grey: #e2e2e2;
 
@@ -46,6 +47,7 @@ nav {
   width: 100%;
   background: $white;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   z-index: 10;
@@ -73,6 +75,12 @@ nav {
     .navbar-link {
       padding: 15px;
 
+      @media (max-width: 600px) {
+        &.home {
+          display: none;
+        }
+      }
+
       &.active {
         position: relative;
       }
@@ -94,6 +102,11 @@ nav {
   margin-top: 59px;
   margin-bottom: 60px;
   background: $white;
+  @media (min-width: 1025px) {
+    width: 75%;
+    margin: 59px auto 60px;
+    max-width: 1160px;
+  }
 }
 
 .button-cta {
@@ -106,6 +119,8 @@ nav {
   align-items: center;
   align-self: flex-end;
   font-weight: 700;
+  background: $text-color;
+  color: $white;
   cursor: pointer;
 
   &:hover {
@@ -131,6 +146,7 @@ nav {
   }
 
   .hero-text-detail {
+    text-align: center;
     margin-top: 15px;
   }
 
@@ -193,13 +209,13 @@ nav {
   }
 
   &.mobile-waiter::before {
-    background: url('resources/mobilewaiter_home.png');
+    background: url('resources/mobilewaiter_home_blur.png');
     background-size: cover;
     background-position-y: -190px;
   }
 
   &.fest-pack::before {
-    background: url('resources/festpack_home.png');
+    background: url('resources/festpack_home_blur.png');
     background-size: cover;
     background-position-y: 0px;
   }
@@ -216,6 +232,9 @@ nav {
     font-size: 40px;
     font-weight: 700;
     text-align: center;
+    @media (max-width: 600px) {
+      font-size: 30px;
+    }
   }
 
   .project-description {
@@ -227,7 +246,7 @@ nav {
   background: $text-color;
   color: $white;
   padding: 30px;
-  margin-top: 5px;
+  margin-top: 60px;
 
   .about-title {
     font-size: 30px;
@@ -241,14 +260,15 @@ nav {
     flex-direction: row;
 
     .about-image {
-      width: 30%;
+      width: 300px;
       height: 300px;
       background: url('resources/image.jpg');
-      background-size: 100%;
       border: 15px solid $white;
       -webkit-transform: rotate(-7.5deg);
       -ms-transform: rotate(-7.5deg);
       transform: rotate(-7.5deg);
+      background-size: cover;
+      background-position-x: 50%;
     }
 
     .about-text-container {
@@ -256,6 +276,7 @@ nav {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      flex: 1;
 
       .about-text {
         font-weight: 500;
@@ -266,14 +287,32 @@ nav {
         @extend .button-cta;
       }
     }
+
+    @media (max-width: 700px) {
+      flex-wrap: wrap;
+      .about-image {
+        margin-bottom: 30px;
+        // width: 100px;
+        // height: 100px;
+      }
+      .about-text-container {
+        margin-left: 0;
+        .about-text {
+          margin-top: 30px;
+        }
+        .about-cta {
+          margin-top: 30px;
+        }
+      }
+    }
   }
 }
 
 .process-container {
   padding: 30px;
-  background: $text-color;
+  color: $text-color;
   margin-top: 60px;
-  color: $white;
+  background: $white;
 
   .process-cta {
     @extend .button-cta;
@@ -292,18 +331,23 @@ nav {
     margin-top: 30px;
     margin-bottom: 30px;
 
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+
     .process-item {
       // width: 80px;
       height: 80px;
       padding: 0 15px;
-      color: $white;
+      background: $white;
+      color: $text-color;
       font-weight: 500;
       display: flex;
       justify-content: center;
       align-items: center;
       text-transform: uppercase;
       text-align: center;
-      border-bottom: 1px solid $white;
+      border-bottom: 1px solid $text-color;
       border-radius: 15%;
     }
   }
@@ -318,10 +362,10 @@ nav {
 
 .contact-container {
   padding: 30px;
-  background: $text-color;
+  color: $text-color;
   margin-top: 60px;
   margin-bottom: 60px;
-  color: $white;
+  background: $white;
 
   .contact-title {
     font-size: 30px;
@@ -340,6 +384,7 @@ nav {
 
 .article-container {
   width: 75%;
+  max-width: 1160px;
   margin: 0 auto;
   padding-top: 60px;
   color: $text-color;
@@ -359,8 +404,36 @@ nav {
     &.with-video {
       display: flex;
       flex-direction: row;
+      justify-content: flex-start;
+      @media (max-width: 600px) {
+        flex-wrap: wrap-reverse;
+        video, img {
+          margin-bottom: 15px;
+          margin-left: 0;
+        }
+      }
+      * {
+        display: block;
+      }
+    }
+    &.two-column {
+      display: flex;
+      flex-direction: row;
       justify-content: space-between;
-      // flex-wrap: wrap;
+      div {
+        flex: 1;
+        margin-right: 60px;
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+    &.paginator {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      .next {
+        float: right;
+      }
     }
     p {
 
@@ -378,9 +451,13 @@ nav {
     ol {
       margin-top: 15px;
       li {
-        margin-left: 45px;
-        margin-top: 5px;
+        margin-left: 15px;
+        margin-top: 10px;
       }
     }
   }
+}
+
+.higlight {
+  color: $higlight-color;
 }
