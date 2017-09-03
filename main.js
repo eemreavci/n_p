@@ -40,4 +40,35 @@ $(document).ready(function () {
     });
   });
 
+  function openGalleryWithItems (items) {
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+
+    // define options (if needed)
+    var options = {
+        // optionName: 'option value'
+        // for example:
+        index: 0 // start at first slide
+    };
+
+    // Initializes and opens PhotoSwipe
+    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+    gallery.init();
+  }
+
+  $(document).on('click', '[data-content]', function (e) {
+    var imageUrl = '/' + $(e.currentTarget).data('content');
+    var width = parseInt($(e.currentTarget).data('width'));
+    var height = parseInt($(e.currentTarget).data('height'));
+    // build items array
+    var items = [
+        {
+            src: imageUrl,
+            w: width,
+            h: height
+        }
+    ];
+
+    openGalleryWithItems(items);
+  });
+
 });

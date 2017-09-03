@@ -461,3 +461,19 @@ nav {
 .higlight {
   color: $higlight-color;
 }
+
+.thumbnail-container {
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+
+  p {
+    font-weight: 700;
+  }
+
+  img {
+    margin-left: 0;
+    width: 100%;
+  }
+}
