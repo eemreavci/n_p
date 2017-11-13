@@ -41,6 +41,10 @@
       ga('send', 'pageview');
 
     </script>
+    <link rel="stylesheet" href="external/photoswipe.css">
+    <link rel="stylesheet" href="external/default-skin/default-skin.css">
+    <script async src="external/photoswipe.min.js"></script>
+    <script async src="external/photoswipe-ui-default.min.js"></script>
     <link rel="stylesheet" href="main.css">
     <script type="text/javascript" src="main.js"></script>
   </head>
@@ -57,7 +61,7 @@
     <div class="content-container">
 
 <div class="page-content">
-  <div class="hero-container fest-pack">
+  <div class="hero-container ux-process">
     <div class="hero-text">
       UX Process
     </div>
@@ -71,6 +75,8 @@
     <h2>User Journeys</h2>
     <div class="article">
       <div><p>I start my process by thinking about the potential user, and the problem that we are trying to solve with this application. I consider several scenarios where the user can benefit from the application and I note down as many as I can come up with at the moment.</p>
+        <br>
+        <p>Then I research products that provide similar services in order to understand how they handle similar cases. This allows me to learn more about possible patterns that users might be used to and also to identify common features and major pain points.</p>
         <br>
         <p>If resources allow, based on our potential user profile, I would love to conduct a short questionnaire or organize some focus groups at this stage to make sure we are building something that actually benefits the user.</p>
       </div>
@@ -120,7 +126,7 @@
       <div>
         <p>Depending on the type of the application and the complexity of the user flows, I try to decide which parts of the application needs further user testing to prove the concept and I try to come up with a plan for these user tests. In this plan, I also consider what kind of an interactive prototype will be needed for this test.</p>
         <br>
-        <p>Sometimes I simply print the screens and navigate the page manually by myself depending on the input from the user. This is very fast to do and is very helpful when you need to iterate several times.</p>
+        <p>Sometimes I simply print the screens and navigate the page manually by myself (paper prototyping) depending on the input from the user. This is very fast to do and is very helpful when you need to iterate several times.</p>
         <br>
         <p>If it is a more formal user test, I create a clickable prototype using InVision or Axure which allows the user to experience the application hands-on. This way they can click around and browse the application more similar to how they would if they were actually using it.</p>
         <br>
@@ -137,6 +143,72 @@
 
   </div>
 </div>
+</div>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 </body>
 </html>

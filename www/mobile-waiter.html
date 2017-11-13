@@ -41,6 +41,10 @@
       ga('send', 'pageview');
 
     </script>
+    <link rel="stylesheet" href="external/photoswipe.css">
+    <link rel="stylesheet" href="external/default-skin/default-skin.css">
+    <script async src="external/photoswipe.min.js"></script>
+    <script async src="external/photoswipe-ui-default.min.js"></script>
     <link rel="stylesheet" href="main.css">
     <script type="text/javascript" src="main.js"></script>
   </head>
@@ -68,14 +72,22 @@
   <div class="article-container">
     <h1>Mobile Waiter</h1>
     <div class="article">
-      <p>This project is about making your experience in a restaurant/cafe/bar smoother, while also benefiting the businesses by reducing staff requirements, increasing customer loyalty and overall making customers happier.</p>
+      <p>This project is about making customers' experience (e.g. ordering, payment, etc.) in a restaurant/cafe/bar smoother, while also benefiting the businesses by reducing staff requirements, increasing customer loyalty and overall making customers happier.</p>
       <br>
       <p>I’ve decided to work on this side project when I realized this is a very inefficient process in life that we've all got used to and I wanted to give it a shot to improve this.</p>
     </div>
 
+    <div class="article">
+      <p>For a short summary of what the app does, check out <strong>the short explanation from the onboarding process:</strong></p>
+    </div>
+
+    <div class="thumbnail-container" data-content='resources/mobile_waiter_onboarding.png' data-width='1956' data-height='817'>
+      <img src="resources/mobile_waiter_onboarding.png" alt="Mobile Waiter Onboarding">
+    </div>
+
     <h2>Scenario</h2>
     <div class="article">
-      <p>Let’s take the following scenario:</p>
+      <p><strong>Let’s take the following scenario in order to compare the regular process in a restaurant with the process using Mobile Waiter:</strong></p>
       <ol>
         <li>You go to a restaurant with two other friends</li>
         <li>You all order one main meal and one drink</li>
@@ -171,7 +183,9 @@
             </div>
           </div>
         </div>
-
+        <br>
+        <hr>
+        <h4>Result:</h4>
         <div class="article two-column">
           <div>
             <p><strong>Waiter comes to the table: <span class="higlight">9 times</span></strong></p>
@@ -194,10 +208,22 @@
     <h2>How does it work</h2>
     <h2>Ordering from the menu</h2>
     <div class="article with-video">
-      <p>When the user arrives at the restaurant, the waiter comes to the table and scans the QR code of everyone on the table. This takes users to the restaurant menu and also lets the waiter’s application sync up with the users. Then the user browses the menu and adds the things he/she wants to order in to the basket. When everything is ready the user clicks the order now button which lets the waiter and the kitchen notified about the order.</p>
       <div>
-        <img width="270" height="480" src="resources/mobilewaiter_burgers.png">
+        <p>When the user arrives at the restaurant, the waiter comes to the table and scans the QR code of everyone on the table. This takes users to the restaurant menu and also lets the waiter’s application sync up with the users. Then the user browses the menu and adds the things he/she wants to order in to the basket. When everything is ready the user clicks the order now button which lets the waiter and the kitchen notified about the order.</p>
+        <div class='thumbnail-container' data-content='resources/mobile_waiter_order_process.png' data-width='3438' data-height='1122'>
+          <p>User flow: Order process</p>
+          <img src="resources/mobile_waiter_order_process_thumb.png" alt="Order Process">
+        </div>
       </div>
+      <div>
+        <video controls="controls" preload="none" width="270" height="480" name="Order Process" src="resources/mobile_waiter_order_process.mov#t=0.1"></video>
+      </div>
+    </div>
+
+    <div class="image-block">
+      <img src="resources/mobilewaiter_menu.png" data-content='resources/mobilewaiter_menu.png' data-width='1125' data-height='2001' alt="Mobile Waiter">
+      <img src="resources/mobilewaiter_burgers.png" data-content='resources/mobilewaiter_burgers.png' data-width='1125' data-height='2001' alt="Mobile Waiter">
+      <img src="resources/mobilewaiter_single_item.png" data-content='resources/mobilewaiter_single_item.png' data-width='1125' data-height='2001' alt="Mobile Waiter">
     </div>
 
     <h2>Payment</h2>
@@ -208,10 +234,20 @@
         <p>This process also solves the issue with calculating the amount everyone should pay in a group. When the waiter brings the check, everyone needs to calculate the amount they need to pay, including the tip, which might not be an easy task, especially in large groups of people.</p>
         <br>
         <p>The app gives you the amount you need to pay including the tip. Then you can choose which payment method you prefer. Even if you want to pay cash, it is still straightforward as the amount that needs to be paid is written in the app.</p>
+        <div class='thumbnail-container' data-content='resources/mobile_waiter_payment_process.png' data-width='4056' data-height='2606'>
+          <p>User flow: Payment process</p>
+          <img src="resources/mobile_waiter_payment_process_thumb.png" alt="Payment Process">
+        </div>
       </div>
       <div>
-        <img width="270" height="556" src="resources/mobilewaiter_payment.png">
+        <video controls="controls" preload="none" width="270" height="480" name="Order Process" src="resources/mobile_waiter_payment_process.mov#t=0.1"></video>
       </div>
+    </div>
+
+    <div class="image-block">
+      <img src="resources/mobilewaiter_payment.png" data-content='resources/mobilewaiter_payment.png' data-width='1125' data-height='2319' alt="Mobile Waiter">
+      <img src="resources/mobilewaiter_credit_card.png" data-content='resources/mobilewaiter_credit_card.png' data-width='1125' data-height='2001' alt="Mobile Waiter">
+      <img src="resources/mobilewaiter_feedback.png" data-content='resources/mobilewaiter_feedback.png' data-width='1125' data-height='2001' alt="Mobile Waiter">
     </div>
 
     <h2>Rewards</h2>
@@ -226,22 +262,101 @@
         <p>In order to get new customers to start using the app, restaurants can offer a little award for the first order made using the application. Customers would be more willing to try out a new experience when they know they will benefit from it for sure. Yet, after using it for the first time users are more likely to keep using it for more rewards in the future.</p>
       </div>
       <div>
-        <img width="270" height="480" src="resources/mobilewaiter_rewards.png">
+        <video controls="controls" preload="none" width="270" height="480" name="Explore" src="resources/mobile_waiter_rewards.mov#t=0.1"></video>
       </div>
+    </div>
+
+    <div class="image-block">
+      <img src="resources/mobilewaiter_rewards.png" data-content='resources/mobilewaiter_rewards.png' data-width='1125' data-height='2001' alt="Mobile Waiter">
+      <img src="resources/mobilewaiter_orders.png" data-content='resources/mobilewaiter_orders.png' data-width='1125' data-height='2001' alt="Mobile Waiter">
+      <img src="resources/mobilewaiter_rewards_detail.png" data-content='resources/mobilewaiter_rewards_detail.png' data-width='1125' data-height='2001' alt="Mobile Waiter">
     </div>
 
     <h2>Explore</h2>
     <div class="article with-video">
       <p>Users can use the Mobile Waiter application to discover restaurants that support rewards for using the app. This helps users to visit restaurants that would reward them for their loyalty and also provides a good platform to discover different restaurants, increasing the visibility of the partner restaurants.</p>
       <div>
-        <video controls="controls" preload="none" width="270" height="480" name="Video Name" src="resources/mobilewaiter_explore.mov#t=0.1"></video>
+        <video controls="controls" preload="none" width="270" height="480" name="Explore" src="resources/mobile_waiter_home_detail.mov#t=0.1"></video>
       </div>
     </div>
+
+    <div class="image-block">
+      <img src="resources/mobilewaiter_explore.png" data-content='resources/mobilewaiter_explore.png' data-width='1125' data-height='2001' alt="Mobile Waiter">
+      <img src="resources/mobilewaiter_explore_detail.png" data-content='resources/mobilewaiter_explore_detail.png' data-width='1125' data-height='2001' alt="Mobile Waiter">
+      <img src="resources/mobilewaiter_my_lists.png" data-content='resources/mobilewaiter_my_lists.png' data-width='1125' data-height='2001' alt="Mobile Waiter">
+    </div>
+
     <div class="article paginator">
-      <a class="next" data-url="fest-pack">Next project &#x25BA;</a>
+      <a class="next" data-url="fest-pack">Next project - Festpack &#x25BA;</a>
     </div>
   </div>
 </div>
+</div>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 </body>
 </html>
