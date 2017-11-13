@@ -40,14 +40,13 @@ $(document).ready(function () {
     });
   });
 
-  function openGalleryWithItems (items) {
+  function openGalleryWithItems (items, index) {
     var pswpElement = document.querySelectorAll('.pswp')[0];
-
     // define options (if needed)
     var options = {
         // optionName: 'option value'
         // for example:
-        index: 0 // start at first slide
+        index: index // start at first slide
     };
 
     // Initializes and opens PhotoSwipe
@@ -59,16 +58,31 @@ $(document).ready(function () {
     var imageUrl = $(e.currentTarget).data('content');
     var width = parseInt($(e.currentTarget).data('width'));
     var height = parseInt($(e.currentTarget).data('height'));
-    // build items array
-    var items = [
-        {
-            src: imageUrl,
-            w: width,
-            h: height
-        }
-    ];
 
-    openGalleryWithItems(items);
+    var index = $(e.currentTarget).data('index') || 0;
+
+    var group = $(e.currentTarget).data('gallery-group');
+    var items;
+    if (group) {
+      items = $('[data-content][data-gallery-group=' + group + ']').map(function (i, item) {
+        return {
+          src: $(item).data('content'),
+          w: parseInt($(item).data('width')),
+          h:parseInt($(item).data('height'))
+        };
+      });
+    }
+    else {
+      items = [
+          {
+              src: imageUrl,
+              w: width,
+              h: height
+          }
+      ];
+    }
+
+    openGalleryWithItems(items, index);
   });
 
 });
