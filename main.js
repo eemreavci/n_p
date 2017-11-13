@@ -56,7 +56,7 @@ $(document).ready(function () {
   }
 
   $(document).on('click', '[data-content]', function (e) {
-    var imageUrl = '/' + $(e.currentTarget).data('content');
+    var imageUrl = $(e.currentTarget).data('content');
     var width = parseInt($(e.currentTarget).data('width'));
     var height = parseInt($(e.currentTarget).data('height'));
     // build items array
