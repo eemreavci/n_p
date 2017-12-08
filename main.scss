@@ -171,6 +171,17 @@ nav {
     }
   }
 
+  &.prime-video {
+    background: url('resources/prime_video_hero.png');
+    background-size: cover;
+    background-position-y: 0;
+    background-position-x: center;
+
+    .hero-text {
+      font-weight: 700;
+    }
+  }
+
   &.ux-process {
     background: url('resources/ux_process_hero.png');
     background-size: cover;
@@ -227,6 +238,12 @@ nav {
 
   &.fest-pack::before {
     background: url('resources/festpack_home_blur.png');
+    background-size: cover;
+    background-position-y: 0px;
+  }
+
+  &.prime-video::before {
+    background: url('resources/prime_video_home_blur.png');
     background-size: cover;
     background-position-y: 0px;
   }
@@ -402,6 +419,12 @@ nav {
   margin: 0 auto;
   padding-top: 60px;
   color: $text-color;
+
+  &.full-width {
+    padding-top: 0;
+    width: 100%;
+  }
+
   h1 {
     margin-bottom: 15px;
   }
@@ -470,6 +493,17 @@ nav {
       }
     }
   }
+
+  .full-size-image {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.paginator-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .higlight {
