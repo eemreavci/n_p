@@ -3,7 +3,7 @@ $higlight-color: #CF4C32;
 $white: #f9f9f9;
 $grey: #e2e2e2;
 
-* { margin: 0; padding: 0px; }
+* { margin: 0; padding: 0px; box-sizing: border-box;}
 
 @-ms-viewport{
   width: device-width;
@@ -152,6 +152,7 @@ nav {
   .hero-text {
     font-size: 52px;
     font-weight: 500;
+    text-align: center;
   }
 
   &.home .hero-text {
@@ -190,6 +191,17 @@ nav {
 
   &.prime-video {
     background: url('resources/prime_video_hero.png');
+    background-size: cover;
+    background-position-y: 0;
+    background-position-x: center;
+
+    .hero-text {
+      font-weight: 700;
+    }
+  }
+
+  &.rock-and-hunter {
+    background: url('resources/rock_and_hunter_hero.png');
     background-size: cover;
     background-position-y: 0;
     background-position-x: center;
@@ -261,6 +273,12 @@ nav {
 
   &.prime-video::before {
     background: url('resources/prime_video_home_blur.png');
+    background-size: cover;
+    background-position-y: 0px;
+  }
+
+  &.rock-and-hunter::before {
+    background: url('resources/rock_and_hunter_home_blur.png');
     background-size: cover;
     background-position-y: 0px;
   }
@@ -610,6 +628,43 @@ nav {
     box-shadow: 0px 9px 62px -10px rgba(50,51,53,1);
     cursor: pointer;
   }
+}
+
+.rock-and-hunter-logo {
+  background: #2B303A;
+  padding: 400px 200px;
+  margin-top: 100px;
+}
+
+.rock-and-hunter-logo-circle {
+  background: #ffffff;
+  padding: 400px 40%;
+}
+
+.rock-and-hunter-separator {
+  width: 100%;
+  height: auto;
+  background: #EF2B3D;
+  color: #ffffff;
+  text-align: center;
+  padding: 60px;
+
+  &.dark {
+    background: #696C73;
+  }
+
+  p {
+    text-align: left;
+  }
+}
+
+.rock-and-hunter-separator-header {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.no-margin-top {
+  margin-top: 0;
 }
 
 .blog-container {
