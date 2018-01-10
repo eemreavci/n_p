@@ -354,6 +354,14 @@ nav {
       content: 'Figma';
     }
   }
+
+  & .photoshop {
+    background-image: url('resources/photoshop-logo.png');
+
+    &::before {
+      content: 'Photoshop';
+    }
+  }
 }
 
 .profile-picture {
