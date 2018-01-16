@@ -1,27 +1,51 @@
 $(document).ready(function () {
-  var initialHistoryUrl = window.location.pathname === '/' ? '/index' : window.location.pathname;
-  history.pushState({url: initialHistoryUrl}, null, window.location.pathname);
+  // var currentUrl = window.location.pathname;
+  // $('.content-container').load(currentUrl + '.html .page-content', function (e) {
+  //   loadContent(currentUrl);
+  // });
+
+  // var initialHistoryUrl = window.location.pathname === '/' ? '/index' : window.location.pathname;
+  // history.pushState({url: initialHistoryUrl}, null, window.location.pathname);
   $(document).on('click', '[data-url]', function (e) {
     var url = $(e.target).data('url');
-    var historyBackUrl = window.location.pathname === '/' ? 'index' : window.location.pathname;
-    var historyUrl = url === 'index' ? '/' : url;
-    history.pushState({url: historyBackUrl}, null, historyUrl);
     var targetHref = $(e.target).data('hash');
+    var hashTarget = targetHref && targetHref[0] === '#' ? $(targetHref) : null;
     $('.content-container').load(url + '.html .page-content', function (e) {
-      var hashTarget = targetHref && targetHref[0] === '#' ? $(targetHref) : null;
-      var scrollPosition = hashTarget ? hashTarget.offset().top - 59 : 0;
-      ga('set', 'page', '/' + url + '.html');
-      ga('send', 'pageview');
-      $('html,body').animate({
-        scrollTop: scrollPosition
-      }, 600, 'easeOutBack');
+      loadContent(url, hashTarget);
     });
   });
+
+  function loadContent(url, hashTarget) {
+    var historyBackUrl = window.location.pathname === '/' ? '/index' : window.location.pathname;
+    var historyUrl = url === 'index' ? '/' : url;
+    history.pushState({url: historyBackUrl}, null, historyUrl);
+
+    var scrollPosition = hashTarget ? hashTarget.offset().top - 59 : 0;
+    ga('set', 'page', '/' + url + '.html');
+    ga('send', 'pageview');
+    $('html,body').animate({
+      scrollTop: scrollPosition
+    }, 600, 'easeOutBack');
+
+    // make nav active
+    $('.navbar-link[data-url]').removeClass('active');
+    $('.navbar-link[data-url=' + url.replace(/^\//, '') + ']').addClass('active');
+  }
 
   window.addEventListener('popstate', function(e) {
     // e.state is equal to the data-attribute of the last image we clicked
     if (e.state && e.state.url) {
-      $('.content-container').load(e.state.url + '.html .page-content');
+      var url = e.state.url;
+      $('.content-container').load(url + '.html .page-content', function (e) {
+        loadContent(url);
+      });
+
+      // var historyBackUrl = window.location.pathname === '/' ? '/index' : window.location.pathname;
+      // var historyUrl = url === 'index' ? '/' : url;
+      // history.pushState({url: historyBackUrl}, null, historyUrl);
+      // var currentUrl = e.state.url === '/' ? '/index' : e.state.url;
+      // $('.navbar-link[data-url]').removeClass('active');
+      // $('.navbar-link[data-url=' + currentUrl.substr(1) + ']').addClass('active');
     }
   });
 
@@ -46,6 +70,7 @@ $(document).ready(function () {
     var options = {
         // optionName: 'option value'
         // for example:
+        history: false,
         index: index // start at first slide
     };
 

@@ -50,24 +50,23 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="navbar-logo" data-hash="#home" data-url="index">Nazli Kaya</div>
+      <div class="navbar-logo" data-url="index">Nazli Kaya</div>
       <div class="navbar-links">
-        <div data-hash="#home" class="navbar-link home" data-url="index">Home</div>
-        <div data-hash="#projects" class="navbar-link" data-url="index">Projects</div>
-        <div data-hash="#uxprocess" class="navbar-link" data-url="index">UX Process</div>
-        <div data-hash="#contact" class="navbar-link" data-url="index">Contact</div>
-        <div data-hash="#blog" class="navbar-link" data-url="index">Blog</div>
+        <div class="navbar-link home active" data-url="index">Home</div>
+        <div class="navbar-link" data-url="ux-process">Design Process</div>
+        <div class="navbar-link" data-url="blog">Blog</div>
+        <div class="navbar-link" data-url="contact">Contact</div>
       </div>
     </nav>
     <div class="content-container">
 
 <div id="home" class="page-content">
-  <div class="hero-container">
+  <div class="hero-container home">
     <div class="hero-text">
-      NAZLI KAYA
+      Nazli Kaya
     </div>
     <div class="hero-text-detail">
-      UX Designer
+      UI/UX Designer
     </div>
   </div>
   <div id="projects" class="projects-grid">
@@ -87,56 +86,20 @@
         UI/UX Design, Interaction Design, Prototyping
       </div>
     </div>
-  </div>
-  <div id="uxprocess" class="process-container ux-process">
-    <div class="process-title">
-      Design Process
-    </div>
-    <div class="process-items-container">
-      <div class="process-item">
-        User Journeys
+    <div class="project-container prime-video" data-url="prime-video">
+      <div class="project-title">
+        Amazon Prime Video Redesign
       </div>
-      <div class="process-item">
-        Paper sketching
-      </div>
-      <div class="process-item">
-        Low Fidelity Concept
-      </div>
-      <div class="process-item">
-        High Fidelity Concept
-      </div>
-      <div class="process-item">
-        Prototyping and User Testing
-      </div>
-      <div class="process-item">
-        Iterate
+      <div class="project-description">
+        UI Design, Branding, Redesign
       </div>
     </div>
-    <div class="process-cta" data-url="ux-process">
-      Detailed description of my UX process
-    </div>
-  </div>
-  <div id="contact" class="about-container">
-    <div class="about-title">
-      Contact
-    </div>
-    <div class="about-content-container">
-      <div class="about-image profile-picture"></div>
-      <div class="about-text-container">
-        <div class="about-text">
-          <p>Hi there!</p>
-          <br>
-          <p>Thanks for taking your time to visit my page.</p>
-          <br>
-          <p>If you would like to get in touch with me, here is my contact data:</p>
-          <br>
-          <br>
-          <p>Email <a href="mailto:nazlikaya90@gmail.com">nazlikaya90@gmail.com</a></p>
-          <br>
-          <p>Phone <a href="tel:+4917628507918">+49 176 2850 7918</a></p>
-          <br>
-          <p>Social <a href="https://www.linkedin.com/in/nazli-kaya/" target="_blank">Linkedin</a> • <a href="https://medium.com/@nazlikaya90" target="_blank">Medium</a></p>
-        </div>
+    <div class="project-container rock-and-hunter" data-url="rock-and-hunter">
+      <div class="project-title">
+        Rock & Hunter<br>Online Tshirt Shop
+      </div>
+      <div class="project-description">
+        UI/UX Design, Branding, E-commerce
       </div>
     </div>
   </div>
@@ -145,6 +108,48 @@
       Recent posts from my blog
     </div>
     <div class="posts-container">
+      <a class="post-container"
+         href="https://medium.com/@nazlikaya90/3-ways-to-evaluate-your-design-using-data-91495dcc5582"
+         target="_blank">
+        <div class="post-header">
+          <div class="post-writer-image profile-picture"></div>
+          <div class="post-info">
+            <div class="post-info-name">
+              Nazli Kaya
+            </div>
+            <div class="post-info-date">
+              Dec 12 • 4 min read
+            </div>
+          </div>
+        </div>
+        <div class="post-title">
+          3 Ways to Evaluate Your Design Using Data
+        </div>
+        <div class="post-image">
+          <img src="resources/blog-post-3.png" alt="Evaluate design with data hero image">
+        </div>
+      </a>
+      <a class="post-container"
+         href="https://medium.com/@nazlikaya90/optimizing-your-design-workflow-when-working-with-multiple-designers-38519a79ff9d"
+         target="_blank">
+        <div class="post-header">
+          <div class="post-writer-image profile-picture"></div>
+          <div class="post-info">
+            <div class="post-info-name">
+              Nazli Kaya
+            </div>
+            <div class="post-info-date">
+              Nov 29 • 6 min read
+            </div>
+          </div>
+        </div>
+        <div class="post-title">
+          Optimizing your design workflow when working with multiple designers
+        </div>
+        <div class="post-image">
+          <img src="resources/blog-post-2.png" alt="Optimizing workflow hero image">
+        </div>
+      </a>
       <a class="post-container"
          href="https://blog.prototypr.io/invision-studio-first-impressions-from-berlin-event-7461e8f49ea4"
          target="_blank">
