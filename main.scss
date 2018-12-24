@@ -1,5 +1,6 @@
 $text-color: #323335;
 $higlight-color: #CF4C32;
+$higlight-darker-color: #B3412B;
 $white: #f9f9f9;
 $grey: #e2e2e2;
 
@@ -762,4 +763,68 @@ nav {
       }
     }
   }
+}
+
+#mc_embed_signup {
+  @media (max-width: 750px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  padding-left: 15%;
+  padding-right: 15%;
+  background: $text-color;
+  clear:left;
+  font:14px Helvetica,Arial,sans-serif;
+
+  &, * {
+    font-family: inherit; color: $white;
+  }
+
+  input {
+    color: $text-color;
+  }
+
+  #mc_embed_signup_scroll {
+    text-align: center;
+  }
+
+  #subscribeFormWelcome {
+    color: $grey;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 70%;
+  }
+
+  .form-container {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .clear {
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  #mc-embedded-subscribe.button {
+    background: $higlight-color;
+    color: $white;
+    font-weight: bold;
+  }
+
+  #mc-embedded-subscribe.button:hover {
+    background: $higlight-darker-color;
+    color: $white;
+  }
+}
+
+.divider {
+  height: 10px;
+  width: 100%;
+  background: $text-color;
 }
