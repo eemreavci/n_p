@@ -697,9 +697,8 @@ nav {
     justify-content: space-around;
 
     .post-container {
-      width: 40%;
-      height: 40vw;
-      max-height: 400px;
+      width: 70%;
+      height: auto;
       display: flex;
       padding: 15px 30px 30px;
       margin-bottom: 30px;
@@ -707,18 +706,20 @@ nav {
       justify-content: flex-start;
       background: darken($white, 4);
       color: $text-color;
-      -webkit-box-shadow: 0px 9px 62px -10px rgba(0,0,0,1);
-      -moz-box-shadow: 0px 9px 62px -10px rgba(0,0,0,1);
-      box-shadow: 0px 9px 62px -10px rgba(0,0,0,1);
-
+      border: 10px solid $text-color;
+      border-left-width: 2px;
+      border-right-width: 2px;
+      border-bottom-width: 4px;
       text-decoration: none;
       font-weight: normal;
 
+      @media (max-width: 1025px) {
+        width: 100%;
+      }
+
       &:hover {
         text-decoration: none;
-        -webkit-box-shadow: 0px 15px 82px -10px rgba(0,0,0,1);
-        -moz-box-shadow: 0px 15px 82px -10px rgba(0,0,0,1);
-        box-shadow: 0px 15px 82px -10px rgba(0,0,0,1);
+        border-color: $higlight-color;
       }
       &:visited {
         text-decoration: none;
@@ -727,6 +728,7 @@ nav {
       .post-header {
         display: flex;
         flex-direction: row;
+        height: 60px;
 
         .post-writer-image {
           width: 60px;
@@ -737,6 +739,7 @@ nav {
         }
 
         .post-info {
+          height: 60px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -753,6 +756,7 @@ nav {
       }
 
       .post-image {
+        height: 180px;
         margin-top: 15px;
 
         img {
@@ -765,6 +769,7 @@ nav {
   }
 }
 
+// Signup box styles
 #mc_embed_signup {
   @media (max-width: 750px) {
     padding-left: 15px;
