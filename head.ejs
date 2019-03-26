@@ -51,11 +51,11 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="navbar-logo" data-url="index">Nazli Kaya</div>
-      <div class="navbar-links">
-        <a class="navbar-link home <%- current.source == 'index' ? 'active' : '' %>" href="/" data-url="index">Home</a>
-        <a class="navbar-link <%- current.source == 'blog' ? 'active' : '' %>" href="/blog" data-url="blog">Blog</a>
-        <a class="navbar-link <%- current.source == 'contact' ? 'active' : '' %>" href="/contact" data-url="contact">Contact</a>
-      </div>
+      <a class="navbar-logo" href="/" data-url="index" aria-hidden="true">Nazli Kaya</a>
+      <ul class="navbar-links">
+        <li class="navbar-link home <%- current.source == 'index' ? 'active' : '' %>" ><a href="/" data-url="index">Home</a></li>
+        <li class="navbar-link <%- current.source == 'blog' ? 'active' : '' %>"><a href="/blog" data-url="blog">Blog</a></li>
+        <li class="navbar-link <%- current.source == 'contact' ? 'active' : '' %>"><a href="/contact" data-url="contact">Contact</a></li>
+      </ul>
     </nav>
     <div class="content-container">

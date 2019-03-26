@@ -10,15 +10,17 @@ $(document).ready(function () {
     var url = $(e.target).data('url');
     var targetHref = $(e.target).data('hash');
     var hashTarget = targetHref && targetHref[0] === '#' ? $(targetHref) : null;
-    $('.content-container').load(url + '.html .page-content', function (e) {
-      loadContent(url, hashTarget);
-    });
+    // $('.content-container').load(url + '.html .page-content', function (e) {
+    //   loadContent(url, hashTarget);
+    // });
+    loadContent(url, hashTarget);
   });
 
   function loadContent(url, hashTarget) {
-    var historyBackUrl = window.location.pathname === '/' ? '/index' : window.location.pathname;
-    var historyUrl = url === 'index' ? '/' : url;
-    history.pushState({url: historyBackUrl}, null, historyUrl);
+    console.log("Clicked ", url);
+    // var historyBackUrl = window.location.pathname === '/' ? '/index' : window.location.pathname;
+    // var historyUrl = url === 'index' ? '/' : url;
+    // history.pushState({url: historyBackUrl}, null, historyUrl);
 
     var scrollPosition = hashTarget ? hashTarget.offset().top - 59 : 0;
     ga('set', 'page', '/' + url + '.html');
@@ -28,22 +30,22 @@ $(document).ready(function () {
     }, 600, 'easeOutBack');
   }
 
-  window.addEventListener('popstate', function(e) {
-    // e.state is equal to the data-attribute of the last image we clicked
-    if (e.state && e.state.url) {
-      var url = e.state.url;
-      $('.content-container').load(url + '.html .page-content', function (e) {
-        loadContent(url);
-      });
-
-      // var historyBackUrl = window.location.pathname === '/' ? '/index' : window.location.pathname;
-      // var historyUrl = url === 'index' ? '/' : url;
-      // history.pushState({url: historyBackUrl}, null, historyUrl);
-      // var currentUrl = e.state.url === '/' ? '/index' : e.state.url;
-      // $('.navbar-link[data-url]').removeClass('active');
-      // $('.navbar-link[data-url=' + currentUrl.substr(1) + ']').addClass('active');
-    }
-  });
+  // window.addEventListener('popstate', function(e) {
+  //   // e.state is equal to the data-attribute of the last image we clicked
+  //   if (e.state && e.state.url) {
+  //     var url = e.state.url;
+  //     $('.content-container').load(url + '.html .page-content', function (e) {
+  //       loadContent(url);
+  //     });
+  //
+  //     // var historyBackUrl = window.location.pathname === '/' ? '/index' : window.location.pathname;
+  //     // var historyUrl = url === 'index' ? '/' : url;
+  //     // history.pushState({url: historyBackUrl}, null, historyUrl);
+  //     // var currentUrl = e.state.url === '/' ? '/index' : e.state.url;
+  //     // $('.navbar-link[data-url]').removeClass('active');
+  //     // $('.navbar-link[data-url=' + currentUrl.substr(1) + ']').addClass('active');
+  //   }
+  // });
 
   $(function() {
     $('[data-hash]').click(function(e) {
