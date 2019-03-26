@@ -53,9 +53,9 @@
     <nav class="navbar">
       <div class="navbar-logo" data-url="index">Nazli Kaya</div>
       <div class="navbar-links">
-        <div class="navbar-link home active" data-url="index">Home</div>
-        <div class="navbar-link" data-url="blog">Blog</div>
-        <div class="navbar-link" data-url="contact">Contact</div>
+        <a class="navbar-link home <%- current.source == 'index' ? 'active' : '' %>" href="/" data-url="index">Home</a>
+        <a class="navbar-link <%- current.source == 'blog' ? 'active' : '' %>" href="/blog" data-url="blog">Blog</a>
+        <a class="navbar-link <%- current.source == 'contact' ? 'active' : '' %>" href="/contact" data-url="contact">Contact</a>
       </div>
     </nav>
     <div class="content-container">

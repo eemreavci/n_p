@@ -26,10 +26,6 @@ $(document).ready(function () {
     $('html,body').animate({
       scrollTop: scrollPosition
     }, 600, 'easeOutBack');
-
-    // make nav active
-    $('.navbar-link[data-url]').removeClass('active');
-    $('.navbar-link[data-url=' + url.replace(/^\//, '') + ']').addClass('active');
   }
 
   window.addEventListener('popstate', function(e) {
