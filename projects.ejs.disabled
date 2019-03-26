@@ -1,0 +1,34 @@
+<div id="projects" class="projects-grid">
+  <div class="project-container mobile-waiter" data-url="mobile-waiter">
+    <div class="project-title">
+      Mobile Waiter
+    </div>
+    <div class="project-description">
+      UI/UX Design, Interaction Design, Prototyping
+    </div>
+  </div>
+  <div class="project-container fest-pack" data-url="fest-pack">
+    <div class="project-title">
+      FestPack
+    </div>
+    <div class="project-description">
+      UI/UX Design, Interaction Design, Prototyping
+    </div>
+  </div>
+  <div class="project-container prime-video" data-url="prime-video">
+    <div class="project-title">
+      Amazon Prime Video Redesign
+    </div>
+    <div class="project-description">
+      UI Design, Branding, Redesign
+    </div>
+  </div>
+  <div class="project-container rock-and-hunter" data-url="rock-and-hunter">
+    <div class="project-title">
+      Rock & Hunter<br>Online Tshirt Shop
+    </div>
+    <div class="project-description">
+      UI/UX Design, Branding, E-commerce
+    </div>
+  </div>
+</div>
